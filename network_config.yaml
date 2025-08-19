@@ -6,15 +6,15 @@
 # Authentication variables for SSH
 Credentials:
 
-    username : "e058386"     # Username for SSH Authentication
-    password : "ZDA139x8"    # Password for the Username
+    username : ""     # Username for SSH Authentication
+    password : ""     # Password for the Username
 
 # Variable to print result in the CLI
 PrintCLI: True
 
 # Network Device FQDN or IP Address
 NetworkDevice:
-    - nextc1cldwp1.igrupobbva
-    - nextc1cldwp2.igrupobbva
-    - nexvagcdlwp1.igrupobbva
-    - nexvagcdlwp2.igrupobbva
+    - router.1.fqdn
+    - router.2.fqdn
+    - router.3.fqdn
+    - router.4.fqdn
