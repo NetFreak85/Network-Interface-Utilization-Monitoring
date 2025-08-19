@@ -10,7 +10,7 @@ Credentials:
     password : ""     # Password for the Username
 
 # Variable to print result in the CLI
-PrintCLI: True
+PrintCLI: False
 
 # Network Device FQDN or IP Address
 NetworkDevice:
