@@ -25,8 +25,6 @@ The script use **multithreaded**, which allows it to query multiple network devi
 
 A priority queue is a data structure that stores elements with associated priorities, allowing you to retrieve or remove the element with the highest priority (or lowest, depending on implementation) efficiently. Unlike a regular queue (FIFO: First-In-First-Out), a priority queue orders elements based on their priority, not their arrival time.
 
-The script will connects to the network devices to fetch interface utilization data via Restconf. It parses the JSON response to find the `eth_inbytes` and `eth_outbytes` attributes. These attributes serve as the `priority` for the queues, while the `interface name` is the data stored. This setup ensures that interfaces with the highest traffic (most bytes sent or received) are given the highest priority.
-
 The followind ilustration explain how this process work:
 
 <space><space>
@@ -36,6 +34,8 @@ The followind ilustration explain how this process work:
 </div>
 
 <space><space>
+
+In the `Network Interface Utilization Monitoring Project`, the script will connects to the network devices to fetch interface utilization data via Restconf. It parses the JSON response to find the `eth_inbytes` and `eth_outbytes` attributes. These attributes serve as the `priority` for the queues, while the `interface name` is the data stored. This setup ensures that interfaces with the highest traffic (most bytes sent or received) are given the highest priority.
 
 The following code explain how the Priority Queue priorize the interface collection Data: 
 
