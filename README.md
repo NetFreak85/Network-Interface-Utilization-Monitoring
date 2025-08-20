@@ -115,7 +115,7 @@ The following code explain how the Priority Queue priorize the interface collect
 
 2. Run the tool:
    ```bash
-      network_interface_traffic_analyzer.py
+      python network_interface_traffic_analyzer.py
    ```
 
 3. The tool will:
