@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="images/Network Interface Utilization Monitoring.jpeg" alt="Alt Text"/>
+</div>
+
 # Network Interface Utilization Monitoring
 
 A Python tool designed for network engineers to collect and analyze interface traffic from Cisco NX-OS devices. It leverages multi-threading and a priority queue to efficiently identify and rank the highest-traffic interfaces, delivering quick reports through the command-line interface (CLI) and text files.
