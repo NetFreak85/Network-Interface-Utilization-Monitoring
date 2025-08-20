@@ -111,12 +111,29 @@ The following code explain how the Priority Queue priorize the interface collect
 
 ## Usage
 
-1. Configure your `Network Devices` and user `credentials` in the Yaml file `network_config.yaml`, for configuration example see the Configuration section.
+1. Add your `Network Devices` and user `credentials` in the Yaml file `network_config.yaml`, for configuration example see the Configuration bellow:
+
+<space><space>
+
+```yaml
+        Credentials:
+
+           username : ""     # Username for SSH Authentication
+           password : ""     # Password for the Username
+
+        NetworkDevice:
+           - router.1.fqdn
+           - router.2.fqdn
+           - 1.2.3.4
+           - 4.5.6.7
+```
+<space><space>
 
 2. Run the tool:
    ```bash
       python network_interface_traffic_analyzer.py
    ```
+<space><space>
 
 3. The tool will:
    
@@ -159,21 +176,7 @@ Example output:
 
 4. `Note: For debuging propose, you can set the PrintCLI variable to 'True' in the network_config.yaml yaml file to display the output in your terminal.`
 
-## Configuration
-
-- Edit the configuration file (e.g., `network_config.yaml`) to specify the credentials and the device list:
-  ```yaml
-     Credentials:
-
-        username : ""     # Username for SSH Authentication
-        password : ""     # Password for the Username
-
-     NetworkDevice:
-        - router.1.fqdn
-        - router.2.fqdn
-        - 1.2.3.4
-        - 4.5.6.7
-  ```
+<space><space>
 
 ## Contributing
 
