@@ -157,7 +157,7 @@ Example output:
 
 <space><space>
 
-4. `Note: For debuging propose, you can set the PrintCLI variable to 'True' in the network_config.yaml to display the output in your terminal.`
+4. `Note: For debuging propose, you can set the PrintCLI variable to 'True' in the network_config.yaml yaml file to display the output in your terminal.`
 
 ## Configuration
 
