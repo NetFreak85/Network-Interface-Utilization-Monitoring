@@ -111,7 +111,7 @@ The following code explain how the Priority Queue priorize the interface collect
 
 ## Usage
 
-1. Configure your device details (e.g., IP addresses, credentials) in a configuration file or directly in the script (refer to the script's documentation for details).
+1. Configure your `Network Devices` and user `credentials` in the Yaml file `network_config.yaml`, for configuration example see the Configuration section.
 
 2. Run the tool:
    ```bash
