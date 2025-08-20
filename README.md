@@ -64,7 +64,12 @@ The script use **multithreaded**, which allows it to query multiple network devi
    - Rank interfaces by traffic utilization using a **priority queue**.
    - Display results in the CLI and save them to a text file (e.g., `interface_report.txt`).
 
+<space><space>
+
 Example output:
+
+<space><space>
+
 ```
    Inbound Traffic Brief:
    1: Interface: Ethernet1/10 Usage: 3091376 GB
@@ -79,7 +84,19 @@ Example output:
 
 ```
 
-For debuging propose, you can set the PrintCLI variable to **True** in the `network_config.yaml` to display the output in your terminal.
+<space><space>
+
+  Example image:
+
+<space><space>
+
+<div align="center">
+  <img src="images/router.1.fqdn.output_example.png" alt="Alt Text"/>
+</div>
+
+<space><space>
+
+4. `Note: For debuging propose, you can set the PrintCLI variable to 'True' in the network_config.yaml to display the output in your terminal.`
 
 ## Configuration
 
@@ -103,4 +120,4 @@ Contributions are welcome! To contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -
+3. Make your changes and commit them (`git commit -m <comment>`) 
