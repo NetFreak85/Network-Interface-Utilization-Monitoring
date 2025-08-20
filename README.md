@@ -90,7 +90,7 @@ The following code explain how the Priority Queue priorize the interface collect
   - `threading` (For multi threading)
   - `urllib3` (To disable Certificates expiration validation)
 - Cisco NX-OS device with NXAPI enabled, for more information please see the following Cisco configuration [guide](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/6-x/programmability/guide/b_Cisco_Nexus_9000_Series_NX-OS_Programmability_Guide/b_Cisco_Nexus_9000_Series_NX-OS_Programmability_Configuration_Guide_chapter_0101.pdf).
-- Valid credentials for device access, im assuming you are using the same user credentials for all network devices, is a good Security practica has a single user for ##Network Monitoring and Automation##.
+- Valid credentials for device access, im assuming you are using the same user credentials for all network devices, is a good Security practica has a single user for `Network Monitoring and Automation`.
 
 ## Installation
 
