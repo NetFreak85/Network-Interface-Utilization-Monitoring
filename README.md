@@ -25,14 +25,14 @@ The script use **multithreaded**, which allows it to query multiple network devi
 
 A priority queue is a data structure that stores elements with associated priorities, allowing you to retrieve or remove the element with the highest priority (or lowest, depending on implementation) efficiently. Unlike a regular queue (FIFO: First-In-First-Out), a priority queue orders elements based on their priority, not their arrival time.
 
-In the context of my Network Interface Utilization Monitoring project, i generate two priority queue that are used to manage multiple network interfaces, priorazing interfaces with more packets sended/received. 
+The script will connects to the network devices to fetch interface utilization data via Restconf. It parses the JSON response to find the `eth_inbytes` and `eth_outbytes` attributes. These attributes serve as the `priority` for the queues, while the `interface name` is the data stored. This setup ensures that interfaces with the highest traffic (most bytes sent or received) are given the highest priority.
 
 The followind ilustration explain how this process work:
 
 <space><space>
 
 <div align="center">
-  <img src="images/Priority Queue Int Usage Sorting.png" alt="Alt Text"/>
+  <img src="images/Priority Queue Int Usage Sorting .png" alt="Alt Text"/>
 </div>
 
 <space><space>
@@ -75,6 +75,8 @@ The following code explain how the Priority Queue priorize the interface collect
       return big_int_in_heapq, big_int_out_heape
    ```
 <space><space>
+
+  If you need more details about Priority Queues, you can see the [Python Documentation page](https://docs.python.org/3/library/heapq.html#module-heapq).
 
 ## Requirements
 
