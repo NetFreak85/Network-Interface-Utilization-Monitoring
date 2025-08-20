@@ -21,6 +21,61 @@ The script use **multithreaded**, which allows it to query multiple network devi
 - **Error Handling**: Gracefully handles scenarios where data cannot be retrieved from a network device, preventing the script from crashing.
 - **Scalable**: Designed to handle large-scale network environments with multiple devices.
 
+## Basic Priority Queue explanation
+
+A priority queue is a data structure that stores elements with associated priorities, allowing you to retrieve or remove the element with the highest priority (or lowest, depending on implementation) efficiently. Unlike a regular queue (FIFO: First-In-First-Out), a priority queue orders elements based on their priority, not their arrival time.
+
+In the context of my Network Interface Utilization Monitoring project, i generate two priority queue that are used to manage multiple network interfaces, priorazing interfaces with more packets sended/received. 
+
+The followind ilustration explain how this process work:
+
+<space><space>
+
+<div align="center">
+  <img src="images/Priority Queue Int Usage Sorting.png" alt="Alt Text"/>
+</div>
+
+<space><space>
+
+The following code explain how the Priority Queue priorize the interface collection Data: 
+
+<space><space>
+
+   ```python
+   # Function Definition
+   def biggets_interface_traffic_data(jsonData, pqin, pqout):
+
+      # Check if the jsonData is empty before proceeding
+      if not jsonData:
+
+         # Return empty heapqs or handle the error as needed
+         return None, None
+
+      # Priority Queue for biggets interface In Usage
+      big_int_in_heapq = heapq
+
+      # Priority Queue for biggets interface Out Usage
+      big_int_out_heape = heapq
+
+      # For each interface detected in the jsonData, we inserted in a Priority Queue for sorting based on highest utilization
+      for interface in jsonData['ins_api']['outputs']['output']['body']['TABLE_interface']['ROW_interface']:
+
+         # getting interface in usage
+         in_bytes = interface.get('eth_inbytes', interface.get('eth_l3in_ucastbytes', interface.get('loop_in_bytes', 0)))
+
+         # getting interface outn usage
+         out_bytes = interface.get('eth_outbytes', interface.get('eth_l3out_ucastbytes', interface.get('loop_out_bytes', 0)))
+
+         # Adding interfce "in_bytes" as priority and interface['interface'] as name
+         big_int_in_heapq.heappush(pqin, (-int(in_bytes), interface['interface']))
+
+         # Adding interfce "out_bytes" as priority and interface['interface'] as name
+         big_int_out_heape.heappush(pqout, (-int(out_bytes), interface['interface']))
+
+      return big_int_in_heapq, big_int_out_heape
+   ```
+<space><space>
+
 ## Requirements
 
 - Python 3.8 or higher
