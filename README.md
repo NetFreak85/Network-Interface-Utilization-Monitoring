@@ -2,12 +2,19 @@
 
 A Python tool designed for network engineers to collect and analyze interface traffic from Cisco NX-OS devices. It leverages multi-threading and a priority queue to efficiently identify and rank the highest-traffic interfaces, delivering quick reports through the command-line interface (CLI) and text files.
 
+# Project Description
+
+This project, built with **Python 3.9**, automates the process of retrieving and analyzing network interface traffic data from **Cisco NX-OS devices**. It utilizes the **NX-API RESTconf** interface to fetch the output of the `show interface` command. The script processes this data to identify the interfaces with the highest **inbound** and **outbound** traffic, presenting the results in a human-readable format.
+
+The script use **multithreaded**, which allows it to query multiple network devices concurrently, significantly reducing the time it takes to collect data from a large number of devices. The final results are saved to individual text files for each device and can also be printed directly to the console.
+
 ## Features
 
-- **Real-time Traffic Monitoring**: Collects interface traffic data from Cisco NX-OS devices.
-- **Multi-threading**: Utilizes multi-threading for efficient data collection from multiple interfaces.
-- **Priority Queue**: Ranks interfaces based on traffic load for quick identification of high-utilization interfaces.
-- **Reporting**: Generates detailed reports via CLI output and saves them as text files for easy reference.
+- **Multithreaded Data Collection**: Collects interface traffic data making queries to multiple network devices at the same time to enhance efficiency.
+- **YAML Configuration**: Uses a YAML file (`network_config.yaml`) to store network device details and SSH credentials, making the script easy to configure and manage.
+- **Traffic Analysis**: Calculates and identifies the interfaces with the highest inbound and outbound traffic, using a priority queue (via Python's heapq module) to sort the data.
+- **Reporting and flexible Output**: Displays the results on the command-line interface and saves the analyzed data to a separate text file (<device_name>.txt) for each device.
+- **Error Handling**: Gracefully handles scenarios where data cannot be retrieved from a network device, preventing the script from crashing.
 - **Scalable**: Designed to handle large-scale network environments with multiple devices.
 
 ## Requirements
@@ -27,17 +34,19 @@ A Python tool designed for network engineers to collect and analyze interface tr
 ## Installation
 
 1. Clone the repository:
+   
    ```bash
       git clone https://github.com/NetFreak85/Network-Interface-Utilization-Monitoring.git
       cd Network-Interface-Utilization-Monitoring
    ```
 
-2. Install the required Python libraries:
+3. Install the required Python libraries:
+   
    ```bash
-      pip install -r requirements.txt
+      pip install PyYAML requests 
    ```
 
-3. Ensure your Cisco NX-OS devices are configured for SSH access and you have the necessary credentials.
+4. Ensure your Cisco NX-OS devices are configured for SSH access and you have the necessary credentials.
 
 ## Usage
 
@@ -69,6 +78,8 @@ Example output:
    9: Interface: Ethernet2/3 Usage: 0 GB
 
 ```
+
+For debuging propose, you can set the PrintCLI variable to **True** in the `network_config.yaml` to display the output in your terminal.
 
 ## Configuration
 
